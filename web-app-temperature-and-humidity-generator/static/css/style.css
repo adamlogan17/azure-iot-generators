@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    background: #41AADE;
+    color: #fff;
+    font-size: 1.5em;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", sans-serif;
+    font-weight: 100;
+    text-align: center;
+}
+
+.wrapper {
+    background: #88D1F1;
+    color: #6A79A6;
+    display: inline-block;
+    padding: 0em 2em;
+    margin: 2em auto;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, .2);
+    border-radius: 2%;
+}
+
+.row {
+    margin: auto;
+    overflow: auto;
+    margin-bottom: 2%;
+    justify-content: center;
+}
+
+.half-col {
+    width:50%;
+    float:left;
+    overflow: auto;
+}
+
+.full-col {
+    float:left;
+    overflow: auto;
+    width: 100%;
+}
+
+#input-data-section {
+    text-align: left;
+}
+
+#title {
+    text-align: center;
+}
+
+.entry {
+    width: 100%;
+    font-size: .9em;
+    color: #f2f2f2;
+    margin: 0.3em 0 1em 0;
+    border: none;
+    background: none;
+    border-bottom: 3px solid #fff;
+    padding: 0.5em 0.1em;
+    transition: all 0.5s ease;
+}
+
+/* Remove arrow buttons for number input fields */
+/* Chrome, Safari, Edge, Opera */
+/*
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+*/
+/* Firefox */
+/*
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+*/
+
+.iot-data p {
+    margin-bottom: 1%;
+}
+
+.iot-data .entry, .iot-data label {
+    margin-left: 2%;
+    width: 98%;
+}
+
+/* Possible other design for the data ranges for the telemetry*/
+/*
+.iotData label {
+    margin-left: 2%;
+}
+
+.iotData .entry {
+    width: 70%;
+    justify-content: right;
+    padding-bottom: 0%;
+}
+*/
+
+.entry:focus {
+      outline: none;
+      border-bottom: 3px solid #6A79A6;
+}
+
+.labelButton {
+    display:inline-block;
+    background-color:#f2f2f2; 
+    border-radius: 10px;
+    padding: 5px;
+    overflow: auto;
+}
+
+.labelButton:hover {
+    background-color: #6A79A6;
+    color: #f2f2f2;
+}

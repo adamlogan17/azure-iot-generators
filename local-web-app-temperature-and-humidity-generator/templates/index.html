@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <link href="static/css/style.css" type="text/css" rel="stylesheet">
+
+        <title>Azure IoT Device Generator</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col">
+                    <br>
+                    <h2 id="title">Azure IoT Device Generator</h2>
+                </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="full-col" id="input-data-section">
+                <form id="mssgForm" action="" method="get">
+                    <label for="connStr">Connection String: </label>
+                    <input id="connStr" class="entry" type="text" name="connStr" value="{{prevConnStr}}"> 
+                    <br>
+    
+                    <label for="numDevices">Devices to be Created: </label>
+                    <input id="numDevices" class="entry" type="number" name="numDevices" min="1" value="{{prevNumDevices}}">
+                    <br>
+    
+                    <div id="temp" class="iot-data">
+                        <p>Temperature Range</p>
+                        <label for="minTemp">Minimum Value:</label>
+                        <input id="minTemp" class="entry" type="number" name="minTemp" step="any" value="{{prevMinTemp}}">
+    
+                        <label for="maxTemp">Maximum Value:</label>
+                        <input id="maxTemp" class="entry" type="number" name="maxTemp" step="any" value="{{prevMaxTemp}}">
+                    </div>
+    
+                    <div id="hum" class="iot-data">
+                        <p>Humidity Range</p>
+                        <label for="minHum">Minimum Value:</label>
+                        <input id="minHum" class="entry" type="number" name="minHum" step="any" value="{{prevMinHum}}">
+    
+                        <label for="maxHum">Maximum Value:</label>
+                        <input id="maxHum" class="entry" type="number" name="maxHum" step="any" value="{{prevMaxHum}}">
+                    </div>
+                    
+    
+                    <label for="timeMssgs">Time Beteween Messages: </label>
+                    <input id="timeMssgs" class="entry" type="number" name="timeMssgs" step="any" min="0" value="{{prevTimeMssgs}}">
+                    <br><br>
+    
+                    <label for="numMssgs">Number of Messages to be Sent: </label>
+                    <input id="numMssgs" class="entry" type="number" name="numMssgs" min="0" value="{{prevNumMssgs}}">
+                    <br>
+    
+                    <input type="submit" value="Start" hidden="hidden" id="start-data">
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="half-col">
+                <label class="labelButton" for="start-data">Start</label>
+            </div>
+
+            <div class="half-col">
+                <form id="stopMssgsForm" action="" method="get">
+                    <input id="delete" type="hidden" name="delete" value="yes">
+                    <input type="submit" value="Stop" hidden="hidden" id="stop-data">
+                </form>
+
+                <label class="labelButton" for="stop-data">Stop</label>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+          crossorigin="anonymous"></script>
+ 
+          <script type="text/javascript">
+            
+            $(document).on('submit','#mssgForm',function(e)
+            {
+              e.preventDefault();
+              $.ajax({
+                type:'GET',
+                url:'/',
+                data:{
+                    connStr:$("#connStr").val(),
+                    numDevices:$("#numDevices").val(),
+                    minTemp:$("#minTemp").val(),
+                    maxTemp:$("#maxTemp").val(),
+                    minHum:$("#minHum").val(),
+                    maxHum:$("#maxHum").val(),
+                    timeMssgs:$("#timeMssgs").val(),
+                    numMssgs:$("#numMssgs").val(),
+                },
+                success:function(response) {
+                    if (response != "") {
+                        alert(response);
+                    }
+                }
+              })
+            });
+
+            $(document).on('submit','#stopMssgsForm',function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type:'GET',
+                    url:'/',
+                    data:{
+                        delete:$("#delete").val()
+                    }
+                })
+            });
+          </script>
+    </body>
+</html>
