@@ -1,4 +1,4 @@
-# README #
+# local-temperature-and-humidity-generator #
 
 This is the test harness for the Vantiq ride management prototype. This simulates people entering a queue for particular rides and generates the length of time, in which they are willing to stay in the queue for.
 
