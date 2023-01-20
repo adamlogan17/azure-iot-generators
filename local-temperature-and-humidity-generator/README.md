@@ -14,5 +14,5 @@ This is the test harness for the Vantiq ride management prototype. This simulate
 	* If using Linux run ```$ source venv/bin/activate```
 5. Install the dependencies by using the command 'pip install -r requirements.txt'
 6. Run the script by running the command:
-	* If using Windows run ```$ py main.py'```
+	* If using Windows run ```$ py main.py```
 	* If using Linux run ```$ python3 main.py```
