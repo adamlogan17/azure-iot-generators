@@ -7,8 +7,8 @@ This is the test harness for the Vantiq temperature and humidity prototype. This
 1. Download Python to your machine if you have not already done so
 2. Either download or clone this repository to your local machine
 3. Within the terminal navigate to the install location run the following command:
-	* If using Windows run ```$ py * m venv venv```
-	* If using Linux run ```$ python3 * m venv venv```
+	* If using Windows run ```$ py  -m venv venv```
+	* If using Linux run ```$ python3 -m venv venv```
 4. Then activate the virtual environment dependencies using the command:
 	* If using Windows run ```$ venv\scripts\activate```
 	* If using Linux run ```$ source venv/bin/activate```
