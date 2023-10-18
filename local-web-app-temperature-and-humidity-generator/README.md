@@ -11,7 +11,7 @@ This is the test harness for the Vantiq temperature and humidity prototype. This
 4. Then activate the virtual environment dependencies using the command:
    * If using Windows run ```$ venv\scripts\activate```
    * If using Linux run ```$ source venv/bin/activate```
-5. Install the dependencies by using the command 'pip install * r requirements.txt'
+5. Install the dependencies by using the command ```pip install -r requirements.txt```
 6. Run the script by running the command:
    * Run the command ```$ py app.py```
 7. Finally navigate to <http://127.0.0.1:8080/>
